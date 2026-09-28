@@ -1,6 +1,6 @@
-# [Project name]
+# FlimsyXMods Auto Grindstone
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A Fabric 1.21.11 client mod that automates grindstoning every enchanted inventory item, including registered custom enchantments.
 
 ## Run & Operate
 

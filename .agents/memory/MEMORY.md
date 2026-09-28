@@ -1,0 +1,1 @@
+- [Fabric Loom Maven bridge](fabric-loom-maven-bridge.md) — keep Maven as the public command while delegating Minecraft remapping to Loom.

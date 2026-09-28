@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "package": "com.flimsyxmods.autogrindstone",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ScreenAccessor"
+  ]
+}

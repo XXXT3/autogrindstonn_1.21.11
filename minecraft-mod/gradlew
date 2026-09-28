@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+set -eu
+
+GRADLE_VERSION="9.2.0"
+ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+CACHE_DIR="${GRADLE_USER_HOME:-$HOME/.gradle}/wrapper/dists/gradle-${GRADLE_VERSION}"
+DIST_DIR="${CACHE_DIR}/gradle-${GRADLE_VERSION}"
+
+if [ ! -x "${DIST_DIR}/bin/gradle" ]; then
+  mkdir -p "${CACHE_DIR}"
+  ARCHIVE="${CACHE_DIR}/gradle-${GRADLE_VERSION}-bin.zip"
+  if [ ! -f "${ARCHIVE}" ]; then
+    echo "Downloading Gradle ${GRADLE_VERSION} for the Fabric Loom build..."
+    curl --fail --location --retry 3 \
+      "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" \
+      --output "${ARCHIVE}"
+  fi
+  rm -rf "${DIST_DIR}.tmp"
+  mkdir -p "${DIST_DIR}.tmp"
+  unzip -q "${ARCHIVE}" -d "${DIST_DIR}.tmp"
+  mv "${DIST_DIR}.tmp/gradle-${GRADLE_VERSION}" "${DIST_DIR}"
+  rm -rf "${DIST_DIR}.tmp"
+fi
+
+exec "${DIST_DIR}/bin/gradle" --no-daemon "$@"

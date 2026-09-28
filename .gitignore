@@ -47,3 +47,13 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Fabric Loom / Gradle build output
+minecraft-mod/.gradle/
+minecraft-mod/build/
+
+# Maven build output
+minecraft-mod/target/
+
+# Minecraft development runtime data
+minecraft-mod/run/

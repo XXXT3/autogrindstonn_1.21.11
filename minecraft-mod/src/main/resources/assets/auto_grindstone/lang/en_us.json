@@ -1,0 +1,8 @@
+{
+  "category.auto_grindstone": "Auto Grindstone",
+  "key.auto_grindstone.toggle": "Toggle Auto Grindstone",
+  "text.auto_grindstone.started": "Auto Grindstone started.",
+  "text.auto_grindstone.stopped": "Auto Grindstone stopped.",
+  "text.auto_grindstone.open_grindstone": "Open a grindstone before starting Auto Grindstone.",
+  "text.auto_grindstone.finished": "Auto Grindstone finished: all enchanted inventory items were processed."
+}

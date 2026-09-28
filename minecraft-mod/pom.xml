@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.flimsyxmods</groupId>
+    <artifactId>auto-grindstone</artifactId>
+    <version>1.0.0</version>
+    <name>FlimsyXMods Auto Grindstone</name>
+    <description>Client-side auto-grindstone automation for Minecraft 1.21.11.</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.skip>true</maven.compiler.skip>
+        <maven.resources.skip>true</maven.resources.skip>
+        <maven.jar.skip>true</maven.jar.skip>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <skipMain>true</skipMain>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <skipIfEmpty>true</skipIfEmpty>
+                </configuration>
+            </plugin>
+            <!-- Fabric Loom is Gradle-native. Maven is the user-facing build entrypoint. -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <workingDirectory>${project.basedir}</workingDirectory>
+                    <executable>${project.basedir}/gradlew</executable>
+                    <arguments>
+                        <argument>build</argument>
+                    </arguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>fabric-loom-build</id>
+                        <phase>package</phase>
+                        <goals><goal>exec</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

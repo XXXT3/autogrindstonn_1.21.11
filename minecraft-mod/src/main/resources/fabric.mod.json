@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "auto_grindstone",
+  "version": "${version}",
+  "name": "Auto Grindstone",
+  "description": "Automates grinding every enchanted item in the player inventory, including custom enchantments.",
+  "authors": [
+    "FlimsyXMods"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.flimsyxmods.autogrindstone.AutoGrindstoneClient"
+    ]
+  },
+  "mixins": [
+    "auto_grindstone.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~1.21.11",
+    "fabric-api": ">=0.140.0"
+  }
+}
