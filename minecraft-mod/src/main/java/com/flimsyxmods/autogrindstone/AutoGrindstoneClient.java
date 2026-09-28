@@ -12,6 +12,7 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.util.Identifier;
 import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
+import com.flimsyxmods.autogrindstone.mixin.ScreenAccessor;
 
 public final class AutoGrindstoneClient implements ClientModInitializer {
     private static final AutoGrindstoneController CONTROLLER = new AutoGrindstoneController();
