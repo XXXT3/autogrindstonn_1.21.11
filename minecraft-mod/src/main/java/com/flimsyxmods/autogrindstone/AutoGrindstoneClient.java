@@ -49,6 +49,4 @@ public final class AutoGrindstoneClient implements ClientModInitializer {
         });
     }
 
-    private AutoGrindstoneClient() {
-    }
 }
